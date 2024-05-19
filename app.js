@@ -59,7 +59,9 @@ Solve Exercise 4 here:
 
 
 
-game.party = [[ { number: 4, name: "Charmander", type: "fire", hp: 39, starter: true },
+game.party = [[ 
+  
+  { number: 4, name: "Charmander", type: "fire", hp: 39, starter: true },
 ]];
 
 console.log(game)
@@ -80,13 +82,13 @@ game.party = [
 */
 
 
-  game.party.push = [
+  game.party.push = [[
 
   { number: 4, name: "Charmander", type: "fire", hp: 39, starter: true},
   { number: 39, name: "Jigglypuff", type: "normal", hp: 115, starter: false },
   { number: 54, name: "Psyduck", type: "water", hp: 50, starter: false },
   { number: 143, name: "Snorlax", type: "normal", hp: 160, starter: false },
-];
+]];
 
 console.log(game)
 
@@ -103,11 +105,11 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
-
-const party = [hp]
-  party.sort(hp);
-    console.log(party)
-
+/*
+game.party.sort(function(a, b) {
+  return a.hp - b.hp;
+});
+*/
 
 
 /*
@@ -116,5 +118,62 @@ Exercise 7
 2. Think about how you'd loop through the `gyms` array to check and update the `completed` property.
 
 
-Solve Exercise 7 here: 
+Solve Exercise 7 here:
 */
+
+/*
+gym.sort(function(a, b) {
+  if (a.difficulty < 3)
+    return true;
+  if (b.difficulty > 3)
+    return false;
+
+});
+*/
+
+/*
+Exercise 8
+1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+2. How would you replace the current starter Pokémon in your party with its evolved form?
+
+Hint: 
+  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
+  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+
+More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. Remember that you're working with an array of objects - what array method is ideal for replacing one element with another? 
+
+Solve Exercise 8 here:
+*/
+
+// game.party.splice(0, 1, 'Charmeleon');
+
+/*
+Exercise 9
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 9 here:
+*/
+
+for (i = 0; i = pokemon.length; i++) {
+  return pokemon.name
+}
+
+
+
+/*
+Exercise 10
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 10 here:
+*/
+
+for (i = 0; i = pokemon.length; i++) {
+    if(pokemon[i].starter === true) 
+      return pokemon.name
+
+}

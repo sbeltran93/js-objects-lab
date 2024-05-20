@@ -59,11 +59,9 @@ Solve Exercise 4 here:
 
 
 
-game.party = [[ 
+game.party.push(pokemon[3])
   
-  { number: 4, name: "Charmander", type: "fire", hp: 39, starter: true },
-]];
-
+ 
 console.log(game)
 
 
@@ -75,20 +73,11 @@ Exercise 5
 
 Solve Exercise 5 here:
 */
-/*
-game.party = [
-  ['Charmander'], ['Jigglypuff'] , ['Psyduck'], ['Snorlax']
-]
-*/
 
 
-  game.party.push = [[
+game.party.push (pokemon [18], pokemon [25], pokemon [26])
 
-  { number: 4, name: "Charmander", type: "fire", hp: 39, starter: true},
-  { number: 39, name: "Jigglypuff", type: "normal", hp: 115, starter: false },
-  { number: 54, name: "Psyduck", type: "water", hp: 50, starter: false },
-  { number: 143, name: "Snorlax", type: "normal", hp: 160, starter: false },
-]];
+
 
 console.log(game)
 
@@ -105,11 +94,9 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
-/*
-game.party.sort(function(a, b) {
-  return a.hp - b.hp;
-});
-*/
+
+game.party.sort((a, b) => b.hp - a.hp);
+console.log(game.party)
 
 
 /*
@@ -122,7 +109,7 @@ Solve Exercise 7 here:
 */
 
 /*
-gym.sort(function(a, b) {
+game.gym.sort(function(a, b) {
   if (a.difficulty < 3)
     return true;
   if (b.difficulty > 3)
@@ -130,6 +117,23 @@ gym.sort(function(a, b) {
 
 });
 */
+
+
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty < 3) {
+    gym.completed = true
+  }
+})
+
+console.log(game)
+/*
+game.party.forEach((pokemon) => {
+  console.log(pokemon)
+})
+*/
+
+
 
 /*
 Exercise 8
@@ -146,9 +150,17 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 
 Solve Exercise 8 here:
 */
+game.party.forEach((poke, i) => {
 
-// game.party.splice(0, 1, 'Charmeleon');
+game.party.splice(i, 1, poke = pokemon[poke.number])
+})
+console.log(game.party)
 
+
+// this one i watched and explained during support. I still doesnt make sense.
+// game.party.splice(2, 1, "Charmeleon");
+
+// console.log(game)
 /*
 Exercise 9
 1. Print the name of each Pokémon in your party.
@@ -157,11 +169,12 @@ Exercise 9
 Solve Exercise 9 here:
 */
 
-for (i = 0; i = pokemon.length; i++) {
-  return pokemon.name
-}
+// for (i = 0; i < game.party.length; i++) {    
+    // return game.party.name;
 
-
+game.party.forEach((pokemon) => {
+  console.log(pokemon.name)
+})
 
 /*
 Exercise 10
@@ -172,8 +185,21 @@ Exercise 10
 Solve Exercise 10 here:
 */
 
-for (i = 0; i = pokemon.length; i++) {
-    if(pokemon[i].starter === true) 
-      return pokemon.name
+/*
+for (i = 0; i = pokemon.length; i++) 
+    if(pokemon[i].starter === true)
+      // return pokemon.name
+*/
 
-}
+
+/*
+Exercise 11
+1. Add a method called `catchPokemon` to the `game` object. This method should:
+  - Accept an object as a parameter called `pokemonObj`
+  - Add the `pokemonObj` to the `game.party` array.
+  - not return anything
+
+After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+
+Solve Exercise 11 here:
+*/
